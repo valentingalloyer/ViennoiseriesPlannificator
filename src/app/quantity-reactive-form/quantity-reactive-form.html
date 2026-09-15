@@ -1,0 +1,31 @@
+<p>quantity-reactive-form works!</p>
+<form class="quantity-form" [formGroup]="quantityForm" (ngSubmit)="onSubmit()">
+  <label for="qty-person">Nombre de personnes : </label>
+  <input
+    id="qty-person"
+    [formControl]="quantityForm.controls.quantityControl"
+    type="number"
+    placeholder="Nombre de personnes"
+  />
+  <label for="ratio-voracite">Ratio de voracité : </label>
+  <input
+    class="ratioVoracite"
+    id="ratio-voracite"
+    [formControlName]="'ratioVoraciteControl'"
+    type="number"
+    placeholder="Ratio de voracité"
+  />
+  @if (
+    quantityForm.controls.ratioVoraciteControl.invalid &&
+    (quantityForm.controls.ratioVoraciteControl.dirty ||
+      quantityForm.controls.ratioVoraciteControl.touched)
+  ) {
+    @if (quantityForm.controls.ratioVoraciteControl.hasError('required')) {
+      <div class="error-message">Le ratio de voracité est requis.</div>
+    }
+    @if (quantityForm.controls.ratioVoraciteControl.hasError('min')) {
+      <div class="error-message">Le ratio de voracité doit être supérieur ou égal à 0.</div>
+    }
+  }
+  <button type="submit">Calculer les quantités</button>
+</form>

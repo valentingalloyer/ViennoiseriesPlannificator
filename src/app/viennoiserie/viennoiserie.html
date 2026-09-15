@@ -1,0 +1,14 @@
+<div class="title">
+  {{ title }}
+</div>
+<img [src]="imageUrl" alt="Image de {{ title }}" />
+@if (description) { 
+  <div class="description">{{ description }}</div>
+}
+@else
+{
+  <div class="description">Pas de description disponible.</div>
+}
+<app-viennoiserie-like [likeCount]="likeCountParent" (likeCountChange)="onLike($event)"></app-viennoiserie-like>
+
+{{ likeCountParent}}

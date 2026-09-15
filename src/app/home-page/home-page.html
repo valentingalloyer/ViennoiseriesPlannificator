@@ -1,0 +1,13 @@
+<h1>Titre !</h1>
+<div>Voici la liste de mes viennoiseries préférées le {{ dateToday | date:'fullDate' }} :</div>
+<div class="viennoiseries">
+  @for (viennoiserie of viennoiseries; track $index) {
+    <app-viennoiserie
+      [description]="viennoiserie.description"
+      [title]="viennoiserie.title"
+      [imageUrl]="viennoiserie.imageUrl"
+      (like)="onLike($event)"
+    ></app-viennoiserie>
+  }
+</div>
+<app-quantity-reactive-form></app-quantity-reactive-form>
