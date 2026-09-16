@@ -1,0 +1,46 @@
+{
+  "viennoiseries": [
+    {
+      "id": "1",
+      "nom": "Croissant au beurre",
+      "energie_kcal": 420,
+      "macronutriments_g": {
+        "proteines": 8.5,
+        "glucides": 46.0,
+        "dont_sucres": 6.5,
+        "lipides": 22.0,
+        "dont_acides_gras_satures": 14.5
+      },
+      "fibres_g": 2.5,
+      "allergenes": ["Gluten", "Lait", "Œufs"]
+    },
+    {
+      "id": "2",
+      "nom": "Pain au chocolat",
+      "energie_kcal": 412,
+      "macronutriments_g": {
+        "proteines": 7.5,
+        "glucides": 48.0,
+        "dont_sucres": 12.0,
+        "lipides": 21.0,
+        "dont_acides_gras_satures": 13.0
+      },
+      "fibres_g": 3.0,
+      "allergenes": ["Gluten", "Lait", "Œufs", "Soja"]
+    },
+    {
+      "id": "3",
+      "nom": "Brioche nature",
+      "energie_kcal": 345,
+      "macronutriments_g": {
+        "proteines": 8.0,
+        "glucides": 50.0,
+        "dont_sucres": 15.0,
+        "lipides": 12.0,
+        "dont_acides_gras_satures": 7.0
+      },
+      "fibres_g": 2.0,
+      "allergenes": ["Gluten", "Lait", "Œufs"]
+    }
+  ]
+}

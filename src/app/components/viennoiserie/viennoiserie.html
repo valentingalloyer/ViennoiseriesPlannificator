@@ -2,13 +2,16 @@
   {{ title }}
 </div>
 <img [src]="imageUrl" alt="Image de {{ title }}" />
-@if (description) { 
+@if (description) {
   <div class="description">{{ description }}</div>
 }
 @else
 {
   <div class="description">Pas de description disponible.</div>
 }
+
+<button (click)="onDetails()" class="btn-details">Voir les détails</button>
+
 <app-viennoiserie-like [likeCount]="likeCountParent" (likeCountChange)="onLike($event)"></app-viennoiserie-like>
 
 {{ likeCountParent}}

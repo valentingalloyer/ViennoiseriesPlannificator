@@ -3,6 +3,7 @@ import { Viennoiserie } from "../viennoiserie/viennoiserie";
 import { DatePipe } from "@angular/common";
 import { QuantityReactiveForm } from '../quantity-reactive-form/quantity-reactive-form';
 interface ViennoiserieInfo {
+  id: number;
   title: string;
   description?: string;
   imageUrl: string;
@@ -22,9 +23,9 @@ export class HomePage {
   dateToday = new Date();
 
   viennoiseries : ViennoiserieInfo[] = [
-    { title: 'Croissant', description: 'Ceci est un croissant', imageUrl: 'croissant.png' },
-    { title: 'Chocolatine', description: 'Ceci est une chocolatine', imageUrl: 'chocolatine.jpg' },
-    { title: 'Pain aux raisins', description: 'Ceci est un pain aux raisins', imageUrl: 'pain_aux_raisins.jpg' },
-    { title: 'Chouquette', description: 'Ceci est une chouquette', imageUrl: 'chouquette.png' }
+    { id: 1, title: 'Croissant', description: 'Ceci est un croissant', imageUrl: 'croissant.png' },
+    { id: 2, title: 'Chocolatine', description: 'Ceci est une chocolatine', imageUrl: 'chocolatine.jpg' },
+    { id: 4, title: 'Pain aux raisins', description: 'Ceci est un pain aux raisins', imageUrl: 'pain_aux_raisins.jpg' },
+    { id: 3, title: 'Chouquette', description: 'Ceci est une chouquette', imageUrl: 'chouquette.png' }
   ];
 }

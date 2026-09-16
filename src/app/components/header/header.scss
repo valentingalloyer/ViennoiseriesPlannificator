@@ -1,0 +1,33 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  .brand {
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #2c3e50;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e3f2fd;
+    }
+  }
+}
