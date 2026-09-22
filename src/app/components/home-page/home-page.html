@@ -3,6 +3,7 @@
 <div class="viennoiseries">
   @for (viennoiserie of viennoiseries; track $index) {
     <app-viennoiserie
+      [id]="viennoiserie.id"
       [description]="viennoiserie.description"
       [title]="viennoiserie.title"
       [imageUrl]="viennoiserie.imageUrl"

@@ -1,0 +1,27 @@
+@if (viennoiserie$ | async; as v) {
+  <div class="details-card">
+    <h2>{{ v.nom }}</h2>
+    <p><strong>Énergie :</strong> {{ v.energie_kcal }} kcal</p>
+
+    <h3>Profil Macronutritionnel</h3>
+    <ul>
+      <li>Protéines : {{ v.macronutriments_g.proteines }} g</li>
+      <li>Glucides : {{ v.macronutriments_g.glucides }} g
+        <small>(dont sucres : {{ v.macronutriments_g.dont_sucres }} g)</small>
+      </li>
+      <li>Lipides : {{ v.macronutriments_g.lipides }} g
+        <small>(dont saturés : {{ v.macronutriments_g.dont_acides_gras_satures }} g)</small>
+      </li>
+      <li>Fibres : {{ v.fibres_g }} g</li>
+    </ul>
+
+    <h3>Allergènes</h3>
+    <ul class="allergenes-list">
+      @for (allergene of v.allergenes; track allergene) {
+        <li>{{ allergene }}</li>
+      }
+    </ul>
+  </div>
+} @else {
+  <p>Chargement des données nutritionnelles...</p>
+}

@@ -1,0 +1,12 @@
+<div class="admin-layout">
+  <aside class="sidebar">
+    <!-- routerLinkActive ajoute automatiquement une classe CSS quand on est sur cette route -->
+    <a routerLink="/admin/catalogue" routerLinkActive="actif">Catalogue</a>
+    <a routerLink="/admin/users" routerLinkActive="actif">Utilisateurs</a>
+  </aside>
+
+  <main class="content">
+    <!-- C'est ici que s'afficheront le AdminCatalogue et le AdminUsers -->
+    <router-outlet></router-outlet>
+  </main>
+</div>
