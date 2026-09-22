@@ -1,0 +1,31 @@
+<h2>Catalogue des Viennoiseries</h2>
+<p>Gérez ici les produits disponibles pour le planning.</p>
+
+<!-- On gère l'asynchronisme directement dans le HTML -->
+@if (viennoiseries$ | async; as viennoiseries) {
+  <table class="catalogue-table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Calories (kcal)</th>
+      <th>Allergènes</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Nouvelle boucle Angular -->
+      @for (v of viennoiseries; track v.id) {
+        <tr>
+          <td>{{ v.nom }}</td>
+          <td>{{ v.energie_kcal }}</td>
+          <td>{{ v.allergenes.join(', ') }}</td>
+          <td><button>Modifier</button></td>
+        </tr>
+      } @empty {
+        <tr><td colspan="4">Aucune viennoiserie dans le catalogue.</td></tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p>Chargement du catalogue...</p>
+}

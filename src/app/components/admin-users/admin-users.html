@@ -1,0 +1,15 @@
+<h2>Gestion des participants</h2>
+
+<!-- Utilisation du computed() pour l'affichage dynamique -->
+<p>Nombre de collègues actifs : {{ actifsCount() }} / {{ users().length }}</p>
+
+<ul class="user-list">
+  @for (user of users(); track user.id) {
+    <li [class.inactif]="!user.actif">
+      {{ user.nom }}
+      <button (click)="toggleStatut(user.id)">
+        {{ user.actif ? 'Désactiver' : 'Activer' }}
+      </button>
+    </li>
+  }
+</ul>
