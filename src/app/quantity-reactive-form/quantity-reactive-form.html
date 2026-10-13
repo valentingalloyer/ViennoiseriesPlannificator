@@ -29,3 +29,10 @@
   }
   <button type="submit">Calculer les quantités</button>
 </form>
+@if (quantities.length) {
+  <ul class="quantities">
+    @for (q of quantities; track q.title) {
+      <li>{{ q.title }} : {{ q.quantity }}</li>
+    }
+  </ul>
+}
