@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { computeQuantities, LikedViennoiserie, ViennoiserieQuantity } from '../quantity-calculator';
 
 @Component({
   selector: 'app-quantity-reactive-form',
@@ -8,6 +9,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './quantity-reactive-form.scss',
 })
 export class QuantityReactiveForm {
+  @Input() viennoiseries: LikedViennoiserie[] = [];
+
+  quantities: ViennoiserieQuantity[] = [];
+
   quantityForm = new FormGroup({
     quantityControl: new FormControl(1),
     ratioVoraciteControl: new FormControl(4 / 3, [Validators.required, Validators.min(0)]),
@@ -24,9 +29,6 @@ export class QuantityReactiveForm {
       );
       return;
     }
-    var total = Math.ceil(qtyPerson * ratioVoracite);
-    console.log(
-      `Calcul des quantités pour ${qtyPerson} personnes avec un ratio de voracité de ${ratioVoracite} : ${total}`,
-    );
+    this.quantities = computeQuantities(this.viennoiseries, qtyPerson, ratioVoracite);
   }
 }
